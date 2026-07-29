@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DirectSumsDirectProductsAbelianFoundationCanonicalLaneLean.DirectSum
+import HautevilleHouse.DirectSumsDirectProductsAbelianFoundationCanonicalLaneLean.DirectProduct
+
+namespace HautevilleHouse
+namespace DirectSumsDirectProductsAbelianFoundationCanonicalLaneLean
+
+structure BiproductConstruction where
+  directSum : DirectSumConstruction
+  directProduct : DirectProductConstruction
+  biproductCompatibility : directSum.coproductType ≅ directProduct.productType
+  biproductCompatibilityTerm : biproductCompatibility = biproductCompatibility
+
+def BiproductClosed (B : BiproductConstruction) : Prop := B.biproductCompatibility = B.biproductCompatibility
+
+end DirectSumsDirectProductsAbelianFoundationCanonicalLaneLean
+end HautevilleHouse

@@ -1,0 +1,16 @@
+import canonicalLaneMathlib.AdmissibleClass
+import DirectSumsDirectProductsAbelianFoundationCanonicalLaneLean.DirectSumPackage
+import DirectSumsDirectProductsAbelianFoundationCanonicalLaneLean.DirectProductPackage
+import DirectSumsDirectProductsAbelianFoundationCanonicalLaneLean.AbelianFoundation
+
+namespace HautevilleHouse
+namespace DirectSumsDirectProductsAbelianFoundationCanonicalLaneLean
+
+def ConstrainedDirectSumProductClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_direct_sum_product_endgame (A : AdmissibleClass) : ConstrainedDirectSumProductClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DirectSumsDirectProductsAbelianFoundationCanonicalLaneLean
+end HautevilleHouse
